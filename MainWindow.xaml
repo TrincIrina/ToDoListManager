@@ -1,0 +1,50 @@
+﻿<Window x:Class="ToDoListManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoListManager"
+        mc:Ignorable="d"
+        Title="MainWindow" FontSize="20" FontFamily="Consalos"
+        Height="610" MinHeight="610" MaxHeight="610" 
+        Width="750" MinWidth="750" MaxWidth="750">
+    <StackPanel Orientation="Vertical">        
+        <Label Content="To do list" HorizontalAlignment="Center"/>
+        <ListBox x:Name="ToDoListBox" Margin="5" Height="300"/>        
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">              
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <Label Content="The input line:"/>
+                    <TextBox x:Name="CaseTextBox" Height="35" Width="430"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <Label Content="Priority:"/>
+                    <ComboBox x:Name="PriorityComboBox">
+                        <TextBlock>1</TextBlock>
+                        <TextBlock>2</TextBlock>
+                        <TextBlock>3</TextBlock>
+                        <TextBlock>4</TextBlock>
+                        <TextBlock>5</TextBlock>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="addButton" Content="add case" Margin="10" Height="40" Width="110" Click="addButton_Click"/>
+                    <Button x:Name="deleteButton" Content="delete" Margin="10" Height="40" Width="110" Click="deleteButton_Click"/>
+                    <Button x:Name="editButton" Content="edit" Margin="10" Height="40" Width="110" Click="editButton_Click"/>                    
+                    <Button x:Name="exitButton" Content="exit" Margin="10" Height="40" Width="110" Click="exitButton_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="orderByPriorityButton" Content="sorting by priority" Margin="10" Height="40" Width="180" Click="orderByPriorityButton_Click"/>
+                    <Button x:Name="deadlineButton" Content="sorting by deadline" Margin="10" Height="40" Width="190" Click="deadlineButton_Click"/>                    
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
+                <Label Content="Deadline:"/>
+                <Calendar x:Name="DeadlineCalendar"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
